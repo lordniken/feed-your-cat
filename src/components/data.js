@@ -4,6 +4,10 @@ export const productsData = {
       subtitle: "с фуа-гра",
       features: ["<mark>10</mark> порций", "мышь в подарок"],
       weight: "0,5",
+      footerTexts: {
+        selected: "Печень утки разварная с артишоками.",
+        disabled: "Печалька, с фуа-гра закончился.",
+      },
       isSelected: false,
       isDisabled: false,
     },
@@ -11,6 +15,10 @@ export const productsData = {
       subtitle: "с рыбой",
       features: ["<mark>40</mark> порций", "<mark>2</mark> мыши в подарок"],
       weight: "2",
+      footerTexts: {
+        selected: "Головы щучьи с чесноком да свежайшая сёмгушка.",
+        disabled: "Печалька, с рыбой закончился.",
+      },
       isSelected: true,
       isDisabled: false,
     },
@@ -22,6 +30,10 @@ export const productsData = {
         "заказчик доволен",
       ],
       weight: "5",
+      footerTexts: {
+        selected: "Филе из цыплят с трюфелями в бульоне.",
+        disabled: "Печалька, с курой закончился.",
+      },
       isSelected: false,
       isDisabled: true,
     },

@@ -182,6 +182,10 @@ body {
     &__disabled {
       color: $disabledText;
     }
+
+    &__bad {
+      color: #e52e7a;
+    }
   }
 
   &__title {
@@ -266,6 +270,7 @@ body {
   bottom: 0;
   width: 256px;
   height: 269px;
+  border-radius: 0 0 0 8px;
 
   &__disabled {
     opacity: 0.5;
@@ -275,10 +280,12 @@ body {
 .product-item-footer {
   position: absolute;
   bottom: -34px;
+  left: -4px;
   color: #fff;
   font-size: 13px;
-  width: 100%;
+  width: 320px;
   text-align: center;
+  text-shadow: 0 1px 0 #000;
 
   p {
     margin: 0;
@@ -288,11 +295,16 @@ body {
     color: #1698d9;
     font-weight: bold;
     border-bottom: 1px dashed;
+    cursor: pointer;
 
     &:after {
       content: ".";
       border: 0;
       position: absolute;
     }
+  }
+
+  &__disabled {
+    color: #ffff66;
   }
 }
