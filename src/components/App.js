@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/css.scss";
-import Product from "./Product";
+import ProductContainer from "../components/ProductContainer";
 import { productsData } from "./data";
 
 export default function App() {
@@ -8,8 +8,8 @@ export default function App() {
     <div className="page-container">
       <h3 className="page-title">Ты сегодня покормил кота?</h3>
       <ul className="product-list">
-        {productsData.data.map((item, index) => (
-          <Product key={index} data={item} />
+        {productsData.map((item, index) => (
+          <ProductContainer key={index} data={item} />
         ))}
       </ul>
     </div>
