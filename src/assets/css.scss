@@ -75,31 +75,43 @@ body {
 
 .product-item {
   height: 432px;
-  border: 4px solid $default;
+  border: 4px solid transparent;
   border-top: 0;
   border-radius: 0 0px 12px 12px;
-  background: #f2f2f3;
+  background: $default;
   position: relative;
 
   &__hovered {
-    border-color: $defaultHover;
+    background: $defaultHover;
   }
   &__selected {
-    border-color: $selected;
+    background: $selected;
 
     &__hovered {
-      border-color: $selectedHover;
+      background: $selectedHover;
     }
   }
 
   &__disabled {
-    border-color: $disabled;
+    background: $disabled;
     color: $disabledText;
+  }
+
+  &:after {
+    content: "";
+    background: #f2f2f2;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    border-radius: 0 0 8px 8px;
   }
 }
 
 .product-item-head {
   position: relative;
+  background: inherit;
 
   &:before {
     content: "";
@@ -107,7 +119,8 @@ body {
     transform-origin: left top;
     position: absolute;
     width: 62px;
-    border-top: 4px solid $default;
+    border-top: 4px solid transparent;
+    background: inherit;
     left: -4px;
     z-index: 2;
   }
@@ -119,36 +132,10 @@ body {
     right: -4px;
     top: -44px;
     height: 44px;
-    border-top: 4px solid $default;
-    border-right: 4px solid $default;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    background: inherit;
     border-radius: 0 12px 0 0;
-  }
-  &__hovered {
-    &:before,
-    &:after {
-      border-color: $defaultHover;
-    }
-  }
-
-  &__selected {
-    &:before,
-    &:after {
-      border-color: $selected;
-    }
-
-    &__hovered {
-      &:before,
-      &:after {
-        border-color: $selectedHover;
-      }
-    }
-  }
-
-  &__disabled {
-    &:before,
-    &:after {
-      border-color: $disabled;
-    }
   }
 }
 
@@ -164,6 +151,17 @@ body {
     width: 56px;
     background: #f2f2f2;
     z-index: 1;
+  }
+
+  &:after {
+    content: "";
+    width: calc(100% - 40px);
+    background: #f2f2f2;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    height: 44px;
+    border-radius: 0 12px 0 0;
   }
 }
 
@@ -229,29 +227,13 @@ body {
   height: 80px;
   border-radius: 40px;
   position: absolute;
-  background: $default;
+  background: inherit;
   color: #fff;
   text-align: center;
   bottom: 11px;
   right: 11px;
   line-height: 1;
-  z-index: 1;
-
-  &__hovered {
-    background: $defaultHover;
-  }
-
-  &__selected {
-    background: $selected;
-
-    &__hovered {
-      background: $selectedHover;
-    }
-  }
-
-  &__disabled {
-    background: $disabled;
-  }
+  z-index: 2;
 
   &__value {
     padding-top: 10px;
@@ -271,6 +253,7 @@ body {
   width: 256px;
   height: 269px;
   border-radius: 0 0 0 8px;
+  z-index: 1;
 
   &__disabled {
     opacity: 0.5;

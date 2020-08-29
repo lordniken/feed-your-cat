@@ -20,9 +20,8 @@ export default function Product({
         onMouseLeave={onLeave}
         onClick={onClick}
       />
-
       <div className={classNames("product-item")}>
-        <div className={classNames("product-item-head")} />
+        <div className="product-item-head" />
         <div className="product-item-bg" />
         <div className="product-item-body">
           <p
@@ -43,7 +42,7 @@ export default function Product({
             ))}
           </ul>
         </div>
-        <div className={classNames("product-item-weight")}>
+        <div className="product-item-weight">
           <div className="product-item-weight__value">{weight}</div>
           <div className="product-item-weight__unit">кг</div>
         </div>
